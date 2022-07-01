@@ -1,5 +1,8 @@
-import 'package:direlist/screens/login.dart';
+// ignore_for_file: prefer_const_constructors
+
+import 'package:direlist/screens/login/login.dart';
 import 'package:flutter/material.dart';
+
 class Profile extends StatefulWidget {
   const Profile({Key? key}) : super(key: key);
 
@@ -8,38 +11,62 @@ class Profile extends StatefulWidget {
 }
 
 class _ProfileState extends State<Profile> {
-
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
+    // ignore: unused_local_variable
     final screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
-      appBar: AppBar(
-        title: Center( child: Text("Account", style: TextStyle(color: Colors.black),textAlign: TextAlign.center,),),
-        backgroundColor: Colors.white,
-        leading: Container(
-          width: screenWidth ,
-          child: Column(
-              children:<Widget> [
+        appBar: AppBar(
+          title: const Center(
+            child: Text(
+              "Account",
+              style: TextStyle(color: Colors.black),
+            ),
+          ),
+          backgroundColor: Colors.white,
+          leading: SizedBox(
+            width: screenWidth,
+            child: Column(
+              children: <Widget>[
                 Padding(
-                  padding: const EdgeInsets.only(top:15.0),
+                  padding: const EdgeInsets.only(top: 15.0),
                   child: GestureDetector(
-                    onTap: (){
+                    onTap: () {
                       Navigator.of(context).pop();
                     },
-                    child: const Icon(Icons.arrow_back_ios,color: Colors.black,),
+                    child: const Icon(
+                      Icons.arrow_back_ios,
+                      color: Colors.black,
+                    ),
                   ),
                 ),
-                Divider(
-                  color: Colors.black,
-                )
               ],
+            ),
           ),
-        )
-      ),
-      body: Container(
-      ),
-    );
-  }//
+          elevation: 0,
+          centerTitle: true,
+        ),
+        body: Container(
+            child: Column(
+          children: <Widget>[
+            Row(
+              // ignore: prefer_const_literals_to_create_immutables
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Padding(
+                  padding: EdgeInsets.only(
+                      left: 18, top: 27.2, right: 12, bottom: 28),
+                  child: CircleAvatar(
+                    backgroundColor: Colors.black,
+                    radius: 30,
+                  ),
+                ),
+                Column(children: [Text("Welcome"), Text("Kebek Chala")])
+              ],
+            ),
+          ],
+        )));
+  } //
 
 }

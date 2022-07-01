@@ -1,15 +1,14 @@
 import 'package:direlist/home/main_item_page.dart';
 import 'package:direlist/screens/forgot_password.dart';
-import 'package:direlist/screens/login.dart';
+import 'package:direlist/screens/login/login.dart';
 import 'package:direlist/screens/profile.dart';
-import 'package:direlist/screens/registration.dart';
-import 'package:direlist/screens/verification_code.dart';
+import 'package:direlist/screens/signup/registration.dart';
 import 'package:flutter/material.dart';
 import 'package:one_context/one_context.dart';
 import 'package:provider/provider.dart';
 import 'home/start_up_page.dart';
 
-void main(){
+void main() {
   runApp(MyApp());
 }
 
@@ -30,11 +29,9 @@ class _MyAppState extends State<MyApp> {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: Login()
-    );
+        home: Login());
   }
 }
-
 
 class ProductCard extends StatelessWidget {
   const ProductCard({Key? key}) : super(key: key);
@@ -54,39 +51,33 @@ class ProductCard extends StatelessWidget {
           children: <Widget>[
             Container(
               width: double.infinity,
-              height: ((MediaQuery.of(context).size.width - 28) /2) +2,
+              height: ((MediaQuery.of(context).size.width - 28) / 2) + 2,
               child: ClipRRect(
-                
-                clipBehavior: Clip.hardEdge,
-                borderRadius: BorderRadius.vertical(
-                  top: Radius.circular(16),
-                  bottom: Radius.zero
-                ),
-                child: FadeInImage.assetNetwork(placeholder: "assets/image/item1.jpg",
-                    image: "https://media.istockphoto.com/photos/chat-comment-bubble-camera-hashtag-wi-fi-wireless-network-symbol-play-picture-id1323562298?s=612x612",
+                  clipBehavior: Clip.hardEdge,
+                  borderRadius: BorderRadius.vertical(
+                      top: Radius.circular(16), bottom: Radius.zero),
+                  child: FadeInImage.assetNetwork(
+                    placeholder: "assets/image/item1.jpg",
+                    image:
+                        "https://media.istockphoto.com/photos/chat-comment-bubble-camera-hashtag-wi-fi-wireless-network-symbol-play-picture-id1323562298?s=612x612",
                     fit: BoxFit.cover,
-                )
-
-              ),
+                  )),
             ),
             Container(
               height: 90,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: const [
-                  Padding (
+                  Padding(
                     padding: EdgeInsets.fromLTRB(15, 8, 16, 0),
-                    child:  Text(
-                      "CARD Product",
-                      overflow: TextOverflow.ellipsis,
-                      maxLines: 2,
-                      style: TextStyle(
-                        color: Colors.amberAccent,
-                        fontSize: 14,
-                        height: 1.2,
-                        fontWeight: FontWeight.w400
-                      )
-                    ),
+                    child: Text("CARD Product",
+                        overflow: TextOverflow.ellipsis,
+                        maxLines: 2,
+                        style: TextStyle(
+                            color: Colors.amberAccent,
+                            fontSize: 14,
+                            height: 1.2,
+                            fontWeight: FontWeight.w400)),
                   ),
                   Padding(
                     padding: EdgeInsets.fromLTRB(16, 4, 16, 0),
@@ -94,11 +85,11 @@ class ProductCard extends StatelessWidget {
                       "56 birr",
                       textAlign: TextAlign.left,
                       overflow: TextOverflow.ellipsis,
-                      maxLines:1,
+                      maxLines: 1,
                       style: TextStyle(
-                        color: Colors.cyanAccent,
-                        fontSize: 14,
-                        fontWeight: FontWeight.w600),
+                          color: Colors.cyanAccent,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w600),
                     ),
                   ),
                   Padding(
@@ -109,15 +100,12 @@ class ProductCard extends StatelessWidget {
                       overflow: TextOverflow.ellipsis,
                       maxLines: 1,
                       style: TextStyle(
-                        decoration: TextDecoration.lineThrough,
-                        color: Colors.yellow,
-                        fontSize: 11,
-                        fontWeight: FontWeight.w600
-                      ),
+                          decoration: TextDecoration.lineThrough,
+                          color: Colors.yellow,
+                          fontSize: 11,
+                          fontWeight: FontWeight.w600),
                     ),
                   )
-
-
                 ],
               ),
             )
@@ -128,43 +116,45 @@ class ProductCard extends StatelessWidget {
   }
 }
 
-
-class ProductBox extends StatelessWidget{
-  const ProductBox({Key? key, required this.name, required this.description, required this.price}) : super(key: key);
+class ProductBox extends StatelessWidget {
+  const ProductBox(
+      {Key? key,
+      required this.name,
+      required this.description,
+      required this.price})
+      : super(key: key);
   final String name;
   final String description;
   final int price;
 
   @override
-  Widget build(BuildContext context){
-    return  Container(
-      padding: const EdgeInsets.all(2),
-      height: 120,
-      child: Card(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: <Widget>[
-            Image.asset("assets/image/item1.jpg"),
-            Expanded(
-              child: Container(
-                padding:const EdgeInsets.all(5),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Text(
-                      name,
-                      style:const TextStyle(fontWeight: FontWeight.bold),
+  Widget build(BuildContext context) {
+    return Container(
+        padding: const EdgeInsets.all(2),
+        height: 120,
+        child: Card(
+          child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                Image.asset("assets/image/item1.jpg"),
+                Expanded(
+                  child: Container(
+                    padding: const EdgeInsets.all(5),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Text(
+                          name,
+                          style: const TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        Text(description),
+                        Text("Price $price")
+                      ],
                     ),
-                    Text(
-                      description
-                    ),
-                    Text("Price $price")
-                  ],
-                ),
-              ),
-            )
-          ]
-         /*   Container(
+                  ),
+                )
+              ]
+              /*   Container(
               height: 300,
               width: 200,
               decoration: const BoxDecoration(
@@ -183,9 +173,7 @@ class ProductBox extends StatelessWidget{
                 ]
             )
           ],*/
-        ),
-      )
-    );
+              ),
+        ));
   }
 }
-

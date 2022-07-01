@@ -1,16 +1,15 @@
 import 'package:direlist/screens/forgot_password.dart';
 import 'package:direlist/screens/profile.dart';
-import 'package:direlist/screens/registration.dart';
-import 'package:direlist/screens/verification_code.dart';
+import 'package:direlist/screens/signup/registration.dart';
 import 'package:direlist/widgets/big_text.dart';
 import 'package:direlist/widgets/small_text.dart';
 import 'package:flutter/material.dart';
 import 'package:direlist/custom/input_decoration.dart';
 import 'package:toast/toast.dart';
 
-import '../custom/toast_component.dart';
-import '../utils/colors.dart';
-import '../widgets/checkbox.dart';
+import '../../custom/toast_component.dart';
+import '../../utils/colors.dart';
+import '../../widgets/checkbox.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -150,21 +149,20 @@ class _LoginState extends State<Login> {
                             children: <Widget>[
                               Flexible(
                                   child: Row(
-                                  children: [
+                                children: [
                                   CheckedBox(),
                                   BigText(text: "Remember me", size: 15)
                                 ],
                               )),
                               Flexible(
-                                child:  TextButton(
-                                  onPressed: () {
-                                    onPressedForgetPassword(context);
-                                  },
-                                  child: SmallText(
-                                    text: "Forget password?",
-                                  ),
-                                )
-                              )
+                                  child: TextButton(
+                                onPressed: () {
+                                  onPressedForgetPassword(context);
+                                },
+                                child: SmallText(
+                                  text: "Forget password?",
+                                ),
+                              ))
                             ],
                           ),
                         ),
@@ -183,8 +181,7 @@ class _LoginState extends State<Login> {
                                 height: 50,
                                 width: 350,
                                 alignment: const Alignment(0, 0),
-                                child: const Text(
-                                    "Log in",
+                                child: const Text("Log in",
                                     style: TextStyle(
                                         fontSize: 15,
                                         fontWeight: FontWeight.bold)),
