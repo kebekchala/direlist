@@ -3,6 +3,7 @@ import 'package:direlist/screens/forgot_password.dart';
 import 'package:direlist/screens/login/login.dart';
 import 'package:direlist/screens/profile.dart';
 import 'package:direlist/screens/signup/registration.dart';
+import 'package:direlist/screens/splashScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:one_context/one_context.dart';
 import 'package:provider/provider.dart';
@@ -29,7 +30,7 @@ class _MyAppState extends State<MyApp> {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: Profile());
+        home: ShSplashScreen());
   }
 }
 

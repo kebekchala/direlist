@@ -51,6 +51,7 @@ dependencies:
   meta: ^1.7.0
   google_sign_in: ^5.3.3
   very_good_analysis: ^3.0.1
+  nb_utils: ^4.6.10
 
 dev_dependencies:
   flutter_test:
