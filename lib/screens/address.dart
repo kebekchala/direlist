@@ -1,8 +1,7 @@
-
 import 'package:flutter/material.dart';
 
-class Profile extends StatelessWidget {
-  const Profile({Key? key}) : super(key: key);
+class Address extends StatelessWidget {
+  const Address({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +10,7 @@ class Profile extends StatelessWidget {
       appBar:  AppBar(
         title: const Center(
           child: Text(
-            "Profile",
+            "Address",
             style: TextStyle(color: Colors.black),
           ),
         ),

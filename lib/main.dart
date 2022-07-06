@@ -1,6 +1,7 @@
 import 'package:direlist/home/main_item_page.dart';
 import 'package:direlist/screens/forgot_password.dart';
 import 'package:direlist/screens/login/login.dart';
+import 'package:direlist/screens/menu.dart';
 import 'package:direlist/screens/profile.dart';
 import 'package:direlist/screens/signup/registration.dart';
 import 'package:direlist/screens/splashScreen.dart';
@@ -30,7 +31,8 @@ class _MyAppState extends State<MyApp> {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: ShSplashScreen());
+        home:Menu()
+         );
   }
 }
 
@@ -55,7 +57,7 @@ class ProductCard extends StatelessWidget {
               height: ((MediaQuery.of(context).size.width - 28) / 2) + 2,
               child: ClipRRect(
                   clipBehavior: Clip.hardEdge,
-                  borderRadius: BorderRadius.vertical(
+                  borderRadius:const BorderRadius.vertical(
                       top: Radius.circular(16), bottom: Radius.zero),
                   child: FadeInImage.assetNetwork(
                     placeholder: "assets/image/item1.jpg",

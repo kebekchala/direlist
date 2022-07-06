@@ -1,5 +1,5 @@
 import 'package:direlist/screens/forgot_password.dart';
-import 'package:direlist/screens/profile.dart';
+import 'package:direlist/screens/menu.dart';
 import 'package:direlist/screens/signup/registration.dart';
 import 'package:direlist/widgets/big_text.dart';
 import 'package:direlist/widgets/small_text.dart';
@@ -35,7 +35,7 @@ class _LoginState extends State<Login> {
       return;
     } else {
       Navigator.push(context, MaterialPageRoute(builder: (context) {
-        return const Profile();
+        return const Menu();
       }));
     }
   }
